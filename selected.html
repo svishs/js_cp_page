@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .image-div {
+            display: inline-block;
+            margin: 5px;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        .selected {
+            border: 2px solid green;
+        }
+        .preview {
+            display: flex;
+            flex-wrap: wrap;
+            width: 200px;
+            height: 100px;
+            border: 1px dashed #aaa;
+            padding: 5px;
+            overflow: hidden;
+        }
+        .preview-image {
+            max-width: 50px;
+            max-height: 50px;
+            margin: 2px;
+        }
+        .blank-image-div {
+            border: 2px solid transparent;
+        }
+        .selectedHeroisClass {
+            display: flex;
+            justify-content: center;
+            padding: 0 20px; /* отступы слева и справа */
+        }
+    </style>
+    <title>Image Selector</title>
+</head>
+<body bgcolor="#2b3b42">
+    <div id="selectedHerois" class="selectedHeroisClass">
+        <!--  всего 4 иконки  -->
+        <div id="bl1" class="blank-image-div"><img src="blank.png" alt=" " width="128" height="72"></div>
+        <div id="bl2" class="blank-image-div"><img src="blank.png" alt=" " width="128" height="72"></div>
+        <div id="bl3" class="blank-image-div"><img src="blank.png" alt=" " width="128" height="72"></div>
+        <div id="bl4" class="blank-image-div"><img src="blank.png" alt=" " width="128" height="72"></div>        
+    </div>
+
+    <div id="imageContainer">
+        <!-- 100+ картинок -->
+        <div class="image-div"><img src="img/abaddon.jpg" alt="Image 1" width="64"></div>
+        <div class="image-div"><img src="img/alchemist.jpg" alt="Image 2" width="64"></div>
+        <div class="image-div"><img src="img/ancient-apparition.jpg" alt="Image 3" width="64"></div>
+        <div class="image-div"><img src="img/anti-mage.jpg" alt="Image 4" width="64"></div>
+        <div class="image-div"><img src="img/arc-warden.jpg" alt="Image 5" width="64"></div>
+        <div class="image-div"><img src="img/axe.jpg" alt="Image 6" width="64"></div>
+        <div class="image-div"><img src="img/bane.jpg" alt="Image 7" width="64"></div>
+        <div class="image-div"><img src="img/batrider.jpg" alt="Image 8" width="64"></div>
+        <div class="image-div"><img src="img/beastmaster.jpg" alt="Image 9" width="64"></div>
+        
+    </div>
+   
+    <script>
+        let glovalSrcBlankImage ="";
+        function getDivIdWithBlankSrc(className) {
+    // Получаем все div элементы с указанным классом
+            const divs = document.querySelectorAll(`div.${className}`);
+            // Проверяем каждый div на значение src
+            for (let div of divs) {
+                const img = div.querySelector('img'); // Предполагаем, что img внутри div
+                if (img && img.src.endsWith('blank.png') === true) {
+                    glovalSrcBlankImage = img.src; // сохраняем в глобальную переменную 
+                    return img; // Возвращаем id div, если найден src, отличающийся от "blank.png"
+                }
+            }
+            return null; // Если ни один img не прошёл проверку
+        }
+
+        function setToBlank(className, uri) {
+            const divs = document.querySelectorAll(`div.${className}`);
+            for (let div of divs) {
+                const img = div.querySelector('img');
+                if(img && img.src === uri) {
+                    img.src = glovalSrcBlankImage;
+                }
+            }
+        }
+
+        function clearCurrentAndDeselect(className, uri) {
+            const divs = document.querySelectorAll(`div.${className}`);
+            for (let div of divs) {
+                const img = div.querySelector('img');
+                if(img && img.src === uri) {
+                    div.classList.remove('selected');
+                    return;
+                    // img.src = glovalSrcBlankImage;
+                }
+            }
+
+
+        }
+
+        const blankImageDivs = document.querySelectorAll('.blank-image-div');
+        
+
+
+        const imageDivs = document.querySelectorAll('.image-div');
+       // const previewContainer = document.getElementById('previewContainer');
+
+        // listeners for full list 
+        imageDivs.forEach(div => {
+            div.addEventListener('click', () => {
+                const img = div.querySelector('img');
+                if (div.classList.contains('selected')) {
+                    div.classList.remove('selected');
+                    setToBlank('blank-image-div',img.src );
+                    return; // выход, если изображение уже выбрано
+                }
+
+                // Проверяем количество картинок в предварительном просмотре
+                let idFirstBlank = getDivIdWithBlankSrc('blank-image-div')
+                if( idFirstBlank) { // не null значение                   
+                    console.log(img.src);
+                    console.log(typeof(idFirstBlank));
+                    // Добавляем рамку выбранной картинке
+                    div.classList.add('selected');
+                    idFirstBlank.src = img.src;
+                }
+            });
+        });
+
+        blankImageDivs.forEach(div=> {
+            div.addEventListener('click', ()=> {
+                const img = div.querySelector('img');
+                // если не blank, тогда
+                if( !img.src.endsWith('blank.png')){
+                    // console.log(' ops');
+                    clearCurrentAndDeselect('image-div',img.src);
+                    img.src = glovalSrcBlankImage;
+                }
+
+
+            });
+        });
+
+    </script>
+</body>
+</html>
