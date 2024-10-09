@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-
     <title>Dota counterpicker 7.37d</title>
 </head>
 
 <body>
 
     <div id="mainScreen" class='mainScreen'>
-        <div id="selectedHeroes" class="selectedHeroisClass">
+        <div id="selectedHeroes" class="selectedHeroesClass">
             <!--  всего 4 иконки  -->
             <!-- <div id="bl1" class="blank-image-div"><img src="blank.png" alt=" " width="128" height="72"></div>
             <div id="bl2" class="blank-image-div"><img src="blank.png" alt=" " width="128" height="72"></div>
@@ -27,13 +26,13 @@
     </div>
 
     <div id="calculatedCounters" class="hidden">
-        <button id='backBtn' type="button">Back</button>
+        <button id='btnBack' type="button">Back</button>
         <div id="contraList"></div>
     </div>
     <!--  следующий код с импортами мне поимел мозги   -->
     <script src="code/create_grid.js" type="module"></script>
     <script>
-        const backBtn = document.getElementById('backBtn');
+        const backBtn = document.getElementById('btnBack');
 
         backBtn.addEventListener('click', function () {
             const calcScreen = document.getElementById('calculatedCounters');

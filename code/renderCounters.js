@@ -1,5 +1,22 @@
 import {CountersDic} from './clear_counters.js';
 
+function prepareArrStep1(arr){
+    //  убирает в результирующем массиве всех героев совпадающие с изначально заданными героями
+    //  т.е. если в пике есть ам и шторм, то в результате не будет отображен ам как контра шторму
+    //  обрабатывает исходный массив,
+    // возвращает массив объектов
+    let newArr = arr.filter(el=> el!=0);
+    // console.log(newArr);
+    let result = {};
+    for (const name of newArr ){
+        console.log(name);
+        let tmpArr = CountersDic[name].filter(item => !newArr.includes(item));
+        result[name]= tmpArr;
+    }
+    // console.log(result);
+    return result;
+}
+
 export function renderCounterPickers(stateArr){
     // hide block 1 (скрыть блок с кнопками и сеткой)
     const mainSrc = document.getElementById('mainScreen');
@@ -15,6 +32,9 @@ export function renderCounterPickers(stateArr){
     contraList = document.createElement('div');
     contraList.setAttribute('id','contraList');
     console.log('stateArr length == '+stateArr.length);
+
+    let myObject = prepareArrStep1(stateArr);
+
     for(let i=0; i<stateArr.length; i++){
         console.log(stateArr[i]);
         if (stateArr[i]!=0){
@@ -28,7 +48,7 @@ export function renderCounterPickers(stateArr){
             firstHero.appendChild(imgHero);
             nextHero.appendChild(firstHero);
             //сделаем обход по всему массиву контрпиков из словаря соответствующим ключу-имени героя
-            let namesOfContra = CountersDic[stateArr[i]];
+            let namesOfContra = myObject[stateArr[i]];
             let maxCtr = 6
             for(let j =0 ; j < maxCtr; j++){
                 let el = document.createElement('div');

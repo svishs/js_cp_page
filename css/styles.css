@@ -12,6 +12,11 @@ body {
     display: grid;
 }
 
+#btnBack{
+    padding: 20px 50px;
+    width: 100px;
+}
+
 .hidden {
     display: none;
 }
@@ -102,7 +107,7 @@ body {
 .blank-image-div img{
     width: 128px;
 }
-.selectedHeroisClass {
+.selectedHeroesClass {
     display: flex;
     justify-content: center;
     padding: 0 20px; /* отступы слева и справа */
