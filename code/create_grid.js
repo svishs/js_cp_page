@@ -6,12 +6,12 @@ import {renderCounterPickers} from './renderCounters.js';
 
 // import 
 window.stateArr = [0, 0, 0, 0]; // глобальная. Для хранения состояния выбранных героев
-let glovalSrcBlankImage = "img/other/blank.png"; // глобальная.
+let glovalSrcBlankImage = "img/other/blank.jpg"; // глобальная.
 const btnId = 'btnCalc'; // в стилях это же имя должно быть для кнопки, не забыть.
 // блок корявый - динамическое формирование секции "выбранные герои"
 
 function renderSelectedHeroesStepOne() {
-    const blankImgName = 'blank.png';
+    const blankImgName = 'blank.jpg';
     const selectedHeroestDiv = document.getElementById('selectedHeroes');
     for (let i = 0; i < 4; i++) {
         let newDivNode = document.createElement('div');
@@ -25,7 +25,7 @@ function renderSelectedHeroesStepOne() {
         else {
             //  этот код не выполняется ни в каких случаях 
             // newDivNode.setAttribute('data-heroname', stateArr[i]["name"]); // выбираем name 
-            // newImg.setAttribute('src', 'img/' + stateArr[i]["name"] + '.png'); //ставим картинку
+            // newImg.setAttribute('src', 'img/' + stateArr[i]["name"] + '.jpg'); //ставим картинку
             // newImg.setAttribute('data-heroname', stateArr[i]["name"]); // ставим name
         }
         newDivNode.appendChild(newImg);
@@ -83,7 +83,7 @@ function renderGridOfHerois() {
             HeroCard.setAttribute('class', 'image-div');
             HeroCard.setAttribute('id', curCategory_arr[i]['id']); // задаем id из списка
             HeroCard.setAttribute('data-heroname', curCategory_arr[i]['name']);
-            let imgPath = 'img/' + curCategory_arr[i]['name'] + '.png';
+            let imgPath = 'img/' + curCategory_arr[i]['name'] + '.jpg';
             let newImg = document.createElement('img');
             newImg.setAttribute('src', imgPath);
             newImg.setAttribute('alt', curCategory_arr[i]['name']);
@@ -118,7 +118,7 @@ function renderGridOfHerois() {
                 // console.log(typeof(idFirstBlank));
                 // Добавляем рамку выбранной картинке
                 imgDiv.classList.add('selected');
-                idFirstBlank.querySelector('img').src = 'img/' + imgDiv.getAttribute('data-heroname') + '.png';
+                idFirstBlank.querySelector('img').src = 'img/' + imgDiv.getAttribute('data-heroname') + '.jpg';
                 // немного лишний дополнительный атрибут для img, но раз на нем завязано в делегате выбранных,
                 // то пусть будет.. 
                 idFirstBlank.querySelector('img').setAttribute('data-heroname', imgDiv.getAttribute('data-heroname'));

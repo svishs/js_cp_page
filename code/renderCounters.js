@@ -44,7 +44,7 @@ export function renderCounterPickers(stateArr){
             firstHero.setAttribute('class', 'next_hero1');
 
             let imgHero = document.createElement('img');
-            imgHero.setAttribute('src', 'img/' + stateArr[i] + '.png');
+            imgHero.setAttribute('src', 'img/' + stateArr[i] + '.jpg');
             firstHero.appendChild(imgHero);
             nextHero.appendChild(firstHero);
             //сделаем обход по всему массиву контрпиков из словаря соответствующим ключу-имени героя
@@ -53,7 +53,7 @@ export function renderCounterPickers(stateArr){
             for(let j =0 ; j < maxCtr; j++){
                 let el = document.createElement('div');
                 let img = document.createElement('img');
-                img.setAttribute('src', 'img/' + namesOfContra[j] + '.png');
+                img.setAttribute('src', 'img/' + namesOfContra[j] + '.jpg');
                 el.appendChild(img);
                 nextHero.appendChild(el);
             }
