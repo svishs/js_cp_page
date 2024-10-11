@@ -3,8 +3,8 @@
 
 .rotate_style1 {
     position: relative;
-    width: 400px;
-    height: 500px;
+    width: 80px;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,8 +14,8 @@
 }
 .rotate_style2 {
     position: relative;
-    width: 400px;
-    height: 500px;
+    width: 80px;
+ 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,8 +25,8 @@
 }
 .rotate_style3 {
     position: relative;
-    width: 400px;
-    height: 500px;
+    width: 80px;
+  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +39,7 @@
     content: "";
     position: absolute;
     width: 150px;
-    height: 150%;
+    height: 50%;
     background: linear-gradient(#00ccff, #d400d4);
     animation: animate 4s linear infinite;
 }
@@ -47,7 +47,7 @@
     content: "";
     position: absolute;
     width: 150px;
-    height: 150%;
+    height: 50%;
     background: linear-gradient(#ff2f00, #c5d726);
     animation: animate 4s linear infinite;
 }
@@ -55,7 +55,7 @@
     content: "";
     position: absolute;
     width: 150px;
-    height: 150%;
+    height: 50%;
     background: linear-gradient(#1adc20, #1518d2);
     animation: animate 4s linear infinite;
 }
