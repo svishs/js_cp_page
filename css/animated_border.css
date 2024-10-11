@@ -1,0 +1,123 @@
+/* еще надо как минимум 2-3 стиля добавить... стили кривейшие..   */
+
+
+.rotate_style1 {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    overflow: hidden;
+}
+.rotate_style2 {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    overflow: hidden;
+}
+.rotate_style3 {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.rotate_style1::before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150%;
+    background: linear-gradient(#00ccff, #d400d4);
+    animation: animate 4s linear infinite;
+}
+.rotate_style2::before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150%;
+    background: linear-gradient(#ff2f00, #c5d726);
+    animation: animate 4s linear infinite;
+}
+.rotate_style3::before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150%;
+    background: linear-gradient(#1adc20, #1518d2);
+    animation: animate 4s linear infinite;
+}
+
+
+
+
+
+
+
+.rotate_style1::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    background: #0e1538;
+    border-radius: 16px;
+}
+.rotate_style2::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    background: #0e1538;
+    border-radius: 16px;
+}
+
+.rotate_style3::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    background: #0e1538;
+    border-radius: 16px;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+.rotate_style1 img {
+    position: relative;
+    color: #fff;
+    font-size: 10em;
+    z-index: 10;
+}
+
+.rotate_style2 img {
+    position: relative;
+    color: #fff;
+    font-size: 10em;
+    z-index: 10;
+}
+
+.rotate_style3 img {
+    position: relative;
+    color: #fff;
+    font-size: 10em;
+    z-index: 10;
+}
+
