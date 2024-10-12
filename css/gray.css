@@ -1,0 +1,10 @@
+
+.disabled_img {
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+}
+
+.searched_string{
+    padding: 0 20px;
+    font-size: 32px;
+}

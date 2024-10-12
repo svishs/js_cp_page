@@ -3,12 +3,15 @@ import { clearCurrentAndDeselect } from "./common_functions.js";
 import { setToBlank } from "./common_functions.js";
 import { getDivIdWithBlankSrc } from "./common_functions.js";
 import {renderCounterPickers} from './renderCounters.js';
-
+import {searchAndSelect} from './search_and_select.js';
 // import 
+let searchStr ='';
 window.stateArr = [0, 0, 0, 0]; // глобальная. Для хранения состояния выбранных героев
 let glovalSrcBlankImage = "img/other/blank.jpg"; // глобальная.
 const btnId = 'btnCalc'; // в стилях это же имя должно быть для кнопки, не забыть.
 // блок корявый - динамическое формирование секции "выбранные герои"
+
+
 
 function renderSelectedHeroesStepOne() {
     const blankImgName = 'blank.jpg';
@@ -146,6 +149,35 @@ btnCalc.addEventListener('click', (event) => {
     renderCounterPickers(stateArr);
     // alert('Заглушка поиска контрпиков');
 });
+//навешаем обработчик onChange для инпута
+const searchedHero = document.getElementById('searchedHero');
+searchedHero.addEventListener('input', (event)=> {
+    // alert(event.target.value);
+    let name = (event.target.value).toLowerCase();
+        // findPatternNameAndShadeStyle(name);
+    let fa = document.querySelectorAll('.image-div');
+    // быстро восстанавливаем все стили( пока так )
+    fa.forEach((el)=>{
+        el.classList.remove('disabled_img');
+    });
+
+    if(name!=''){
+        fa.forEach((el)=>{
+            if(!el.getAttribute('data-heroname').startsWith(name)){
+                el.classList.add('disabled_img');
+            }
+
+        })}
+});
+
+
+
+//  по keydown было бы круче, но сложней реализовать
+// document.addEventListener('keydown', function(event) {
+//     // alert(typeof(event.key));
+//     searchAndSelect(searchStr ,event.key);
+// });
+
 
 renderGridOfHerois();
 
