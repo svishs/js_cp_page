@@ -1,0 +1,118 @@
+body {
+    background-color:  #2b3b42;
+}
+#btnCalc {
+    background-color: rgb(66, 204, 121); /* Цвет фона */
+    color: white; /* Цвет текста */
+    border: none; /* Убираем границу */
+    padding: 10px 20px; /* Отступы */
+    cursor: pointer; /* Курсор */
+}
+.mainScreen{
+    display: grid;
+}
+
+#btnBack{
+    padding: 20px 50px;
+    width: 100px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.not_rotate_style{
+    border: 3px solid rebeccapurple;
+    /* border-color: rebeccapurple; */
+    width: 64px;
+}
+
+
+
+.next_hero {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 5px;
+    grid-row-gap:5px;
+    }
+    
+.next_hero1 { grid-area: 1 / 1 / 2 / 2; } 
+.next_hero1 img{
+    border: 3px solid rgb(222, 203, 29);
+    /* border-color: rebeccapurple; */
+    width: 128px;
+}
+
+
+/* Стили для отключенной кнопки */
+#btnCalc[disabled] {
+    background-color: rgb(208, 107, 107); /* Цвет фона для отключенной кнопки */
+    color: lightgray; /* Цвет текста для отключенной кнопки */
+    cursor: not-allowed; /* Указываем, что кнопка неактивна */
+}
+
+.imageContainer {    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+ }
+
+.container-number0 { 
+    border: 2px solid rgb(213, 54, 54);   
+    grid-area: 1 / 1 / 2 / 2; 
+} 
+.container-number1 { 
+    
+    border: 2px solid rgb(32, 185, 52);
+    grid-area: 1 / 2 / 2 / 3; }
+.container-number2 {
+    
+    border: 2px solid rgb(25, 99, 184);
+    grid-area: 2 / 1 / 3 / 2; }
+.container-number3 {
+    
+    border: 2px solid rgb(146, 26, 206);
+    grid-area: 2 / 2 / 3 / 3; } 
+
+.image-div {
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+.image-div img {
+    width: 80px;
+}
+.selected {
+    border: 2px solid green;
+}
+.preview {
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+    height: 100px;
+    border: 1px dashed #aaa;
+    padding: 5px;
+    overflow: hidden;
+}
+.preview-image {
+    max-width: 50px;
+    max-height: 50px;
+    margin: 2px;
+}
+.blank-image-div {
+    border: 2px solid transparent;
+}
+.blank-image-div img{
+    width: 128px;
+}
+.selectedHeroesClass {
+    display: flex;
+    justify-content: center;
+    padding: 20px 20px; /* отступы слева и справа */
+    align-items: center;
+}
+
