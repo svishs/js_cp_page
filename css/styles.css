@@ -184,9 +184,9 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 2vw;
-    grid-row-gap: 2vw;
-    margin: 2vw;
+    /* grid-column-gap: 2vw; */
+    /* grid-row-gap: 2vw; */
+    /* margin: 2vw; */
 }
 /**/
 .container-number0 {
@@ -223,7 +223,7 @@ body {
     float: left;
     width: fit-content;
     box-sizing: border-box;
-    margin: 1vw;
+    /* margin: 1vw; */
     display: flex;
 }
 /**/
@@ -288,45 +288,45 @@ body {
 
 @media (min-width: 301px) and (max-width: 600px) {
     .image-div img {
-        width: calc((100vw - 4vw) / 4 - 2vw - 2vw / 4 - 3px);
+        width: calc((100vw - 4vw) / 4 - 2vw - 2vw / 4 - 1px);
     }
 }
 
 @media (min-width: 601px) and (max-width: 900px) {
     .image-div img {
-        width: calc((100vw - 4vw) / 6 - 2vw - 2vw / 6 - 3px);
+        width: calc((100vw - 4vw) / 6 - 2vw - 2vw / 6 - 1px);
     }
 }
 @media (min-width: 901px) and (max-width: 1200px) {
     .image-div img {
-        width: calc((100vw - 4vw) / 8 - 2vw - 2vw / 8 - 3px);
+        width: calc((100vw - 4vw) / 8 - 2vw - 2vw / 8 - 1px);
     }
 }
 @media (min-width: 1201px) and (max-width: 1500px) {
     .image-div img {
-        width: calc((100vw - 4vw) / 10 - 2vw - 2vw / 10 - 3px);
+        width: calc((100vw - 4vw) / 10 - 2vw - 2vw / 10 - 1px);
     }
 }
 
 @media (min-width: 1501px) and (max-width: 1800px) {
     .image-div img {
-        width: calc((100vw - 4vw) / 12 - 2vw - 2vw / 12 - 3px);
+        width: calc((100vw - 4vw) / 12 - 2vw - 2vw / 12 - 12px);
     }
 }
 
 @media (min-width: 1801px) and (max-width: 2100px) {
     .image-div img {
-        width: calc((100vw - 4vw) / 14 - 2vw - 2vw / 14 - 3px);
+        width: calc((100vw - 4vw) / 14 - 2vw - 2vw / 14 - 12px);
     }
 }
 
 @media (min-width: 2101px) and (max-width: 2400px) {
     .image-div img {
-        width: calc((100vw - 4vw) / 16 - 2vw - 2vw / 16 - 3px);
+        width: calc((100vw - 4vw) / 16 - 2vw - 2vw / 16 - 12px);
     }
 }
 @media (min-width: 2401px) {
     .image-div img {
-        width: calc((100vw - 4vw) / 18 - 2vw - 2vw / 18 - 3px);
+        width: calc((100vw - 4vw) / 18 - 2vw - 2vw / 18 - 12px);
     }
 }
