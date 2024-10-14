@@ -90,9 +90,9 @@ body {
     overflow: hidden;
     float: left;
     margin: 0.5vw;
-    border: 0.5vw solid rgb(11, 32, 137);
-}c
-.rotate_style4 img {
+    border: 0.5vw solid blue;
+}
+.rotate_style4 img{
     position: relative;
     min-width: 64px;
     max-width: 128px;
