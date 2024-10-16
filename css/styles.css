@@ -269,7 +269,7 @@ body {
 /**/
 .selectedHeroesClass {
     width: auto;
-    max-width: 1000px;
+    /* max-width: 1000px; */
     height: auto;
     display: grid;
     justify-content: center;
@@ -277,6 +277,10 @@ body {
     margin: 0;
     grid-auto-flow: column;
     gap: 2vw;
+}
+.temp_class{
+    display: flex;
+    justify-content: center;
 }
 
 /* Для экранов шириной до 300px */
