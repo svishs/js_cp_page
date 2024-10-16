@@ -3,7 +3,7 @@ import { clearCurrentAndDeselect } from "./common_functions.js";
 import { setToBlank } from "./common_functions.js";
 import { getDivIdWithBlankSrc } from "./common_functions.js";
 import {renderCounterPickers} from './renderCounters.js';
-import {searchAndSelect} from './search_and_select.js';
+
 // import 
 let searchStr ='';
 window.stateArr = [0, 0, 0, 0]; // глобальная. Для хранения состояния выбранных героев
