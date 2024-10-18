@@ -3,6 +3,7 @@ import { clearCurrentAndDeselect } from "./common_functions.js";
 import { setToBlank } from "./common_functions.js";
 import { getDivIdWithBlankSrc } from "./common_functions.js";
 import {renderCounterPickers} from './renderCounters.js';
+import {onInputSearchHandler} from './search_helper._function.js'
 
 // import 
 let searchStr ='';
@@ -149,38 +150,21 @@ btnCalc.addEventListener('click', (event) => {
     renderCounterPickers(stateArr);
     // alert('Заглушка поиска контрпиков');
 });
-//навешаем обработчик onChange для инпута
-const searchedHero = document.getElementById('searchedHero');
-searchedHero.addEventListener('input', (event)=> {
-    // alert(event.target.value);
-    let name = (event.target.value).toLowerCase();
-        // findPatternNameAndShadeStyle(name);
-    let fa = document.querySelectorAll('.image-div');
-    // быстро восстанавливаем все стили( пока так )
-    fa.forEach((el)=>{
-        el.classList.remove('disabled_img');
-    });
-
-    if(name!=''){
-        fa.forEach((el)=>{
-            if(!el.getAttribute('data-heroname').startsWith(name)){
-                el.classList.add('disabled_img');
-            }
-
-        })}
-});
-
-
-
-//  по keydown было бы круче, но сложней реализовать
-// document.addEventListener('keydown', function(event) {
-//     // alert(typeof(event.key));
-//     searchAndSelect(searchStr ,event.key);
-// });
 
 
 renderGridOfHerois();
 
+
+//навешаем обработчик onChange для инпута
+const searchedHero = document.getElementById('searchedHero');
+//будем пользовать замыкание для передачи объекта содержащего наименования для составных имен геров
+// т.е. это должен будет быть что-то вроде {'ta': 'templar-assasin';'am':'anti-mage'... }
+//  сделать сформируем этот объект в 
+var short_names_obj = 1; 
+
+searchedHero.oninput = function(event){
+    onInputSearchHandler(event, short_names_obj);
+} 
 
 
 
