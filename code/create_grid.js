@@ -155,16 +155,21 @@ btnCalc.addEventListener('click', (event) => {
 renderGridOfHerois();
 
 
+//
+
 //навешаем обработчик onChange для инпута
 const searchedHero = document.getElementById('searchedHero');
 //будем пользовать замыкание для передачи объекта содержащего наименования для составных имен геров
 // т.е. это должен будет быть что-то вроде {'ta': 'templar-assasin';'am':'anti-mage'... }
 //  сделать сформируем этот объект в 
-var short_names_obj = 1; 
 
-searchedHero.oninput = function(event){
-    onInputSearchHandler(event, short_names_obj);
-} 
+/// насколько это правильно не знаю. но сделаем тут
+// импортированный объект из модуля, проинициализируем
+onInputSearchHandler.init(HeroLst);
+searchedHero.addEventListener('input', (event) => onInputSearchHandler.executor(event));
+// searchedHero.oninput = function(event){
+//     onInputSearchHandler(event, short_names_obj);
+// } 
 
 
 
