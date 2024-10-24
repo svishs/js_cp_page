@@ -8,3 +8,7 @@
     padding: 0 20px;
     font-size: 32px;
 }
+.hero-highlight{
+    filter: brightness(125%);
+    box-shadow: 0 0 12px 3px #05aefc;
+}

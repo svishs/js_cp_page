@@ -44,16 +44,38 @@ export const onInputSearchHandler = {
         // console.log(this);
         this.storedDivs.forEach((el) => {
             el.classList.remove('disabled_img');
+            el.classList.remove('hero-highlight');
         });
-        if (name != '') {  // надо еще добавить логику для длины name больше 1 и contains
-            this.storedDivs.forEach((el) => {
-                if (!el.getAttribute('data-heroname').startsWith(name) &&
-                     (this.innerDict[el.getAttribute('data-heroname')]!=name )) {
-                    el.classList.add('disabled_img');
-                }
-            });
-            // 
+        //
+        if(name.length==0){
+            return;
         }
+
+        let mask = (name.length>1)?true:false; // на эту маску будем множить доп. условие
+
+        this.storedDivs.forEach((el)=> {
+            // непрозрачное условие, которое я не смог представить сразу, поэтому делаем от противного
+            if(el.getAttribute('data-heroname').startsWith(name)||
+               (this.innerDict[el.getAttribute('data-heroname')]==name)||
+               (mask && (el.getAttribute('data-heroname').includes(name)))// учитывается при len(name)>1
+                ){
+                    
+                    el.classList.add('hero-highlight'); // подсвечиваем
+                }
+                else{
+                    el.classList.add('disabled_img');//дизейблим
+                }
+
+        });
+        // if (name != '') {  // надо еще добавить логику для длины name больше 1 и contains
+        //     this.storedDivs.forEach((el) => {
+        //         if (!el.getAttribute('data-heroname').startsWith(name) &&
+        //              (this.innerDict[el.getAttribute('data-heroname')]!=name )) {
+        //             el.classList.add('disabled_img');
+        //         }
+        //     });
+        //     // 
+        // }
     }  
 }
 
